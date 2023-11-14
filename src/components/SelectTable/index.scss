@@ -1,0 +1,14 @@
+
+.selectropdown {
+    padding: 10px;
+    .topBtn {
+        padding: 10px 0;
+        button {margin-right: 10px; color: black;}
+    }
+    .ant-table .ant-table-tbody tr.ant-table-row td{
+        color: #474747;
+        font-weight: 500;
+        border-bottom: 1px solid #999;
+        cursor: pointer;
+    }
+}

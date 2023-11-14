@@ -1,0 +1,11 @@
+.ctrl-cls {
+  position: relative;
+  .ctrl-file-btn {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+  }
+  .ant-upload-list-item  {
+    height: auto!important;
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "name": "frontend-common",
+  "version": "2.0.9",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "@types/browserify": "latest",
+    "antd": "3.16.0",
+    "braft-editor": "^2.3.7",
+    "browserify": "latest",
+    "classnames": "^2.2.6",
+    "client-oauth2": "^4.2.4",
+    "lint-staged": "^9.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "react": "16.8.1",
+    "react-dom": "16.8.1",
+    "react-intl": "2.8.0",
+    "react-router-dom": "4.3.1"
+  },
+  "devDependencies": {
+    "@types/antd": "^1.0.0",
+    "@types/classnames": "^2.2.7",
+    "@types/lodash": "^4.14.123",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.1",
+    "@types/react-intl": "^2.3.17",
+    "@types/react-loadable": "^5.5.0",
+    "@types/react-router-dom": "^4.3.1",
+    "acorn": "^6.1.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-import": "^1.7.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "express": "^4.16.4",
+    "file-loader": "^3.0.1",
+    "get-port": "^4.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "react-loadable": "^5.5.0",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.5.3",
+    "typescript-tslint-plugin": "^0.3.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "url-loader": "^1.1.2",
+    "uuid-token-generator": "^1.0.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "scripts": {
+    "tslint": "tslint -p .",
+    "build-dev": "webpack --config ./webpack.config.js",
+    "build-dev-debug": "node $NODE_DEBUG_OPTION ./node_modules/.bin/webpack --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.prod.js",
+    "start": "webpack-dev-server",
+    "start-dev-server": "webpack-dev-server",
+    "start-mock-server": "node ./mock/start-server.js",
+    "start-mock-server-debug": "node $NODE_DEBUG_OPTION ./mock/start-server.js",
+    "tslint:fix": "npm run tslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run tslint:fix",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "MIT"
+}
